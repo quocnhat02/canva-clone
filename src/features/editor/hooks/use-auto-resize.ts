@@ -1,17 +1,17 @@
-import { useCallback, useEffect } from 'react';
 import { fabric } from 'fabric';
+import { useCallback, useEffect } from 'react';
 
-interface UserAutoResizeProps {
+interface UseAutoResizeProps {
   canvas: fabric.Canvas | null;
   container: HTMLDivElement | null;
 }
 
-export const useAutoResize = ({ canvas, container }: UserAutoResizeProps) => {
+export const useAutoResize = ({ canvas, container }: UseAutoResizeProps) => {
   const autoZoom = useCallback(() => {
     if (!canvas || !container) return;
 
-    const height = container.offsetHeight;
     const width = container.offsetWidth;
+    const height = container.offsetHeight;
 
     canvas.setWidth(width);
     canvas.setHeight(height);
@@ -23,10 +23,10 @@ export const useAutoResize = ({ canvas, container }: UserAutoResizeProps) => {
       .getObjects()
       .find((object) => object.name === 'clip');
 
-    //   @ts-ignore
+    // @ts-ignore
     const scale = fabric.util.findScaleToFit(localWorkspace, {
-      width,
-      height,
+      width: width,
+      height: height,
     });
 
     const zoom = zoomRatio * scale;
@@ -66,7 +66,6 @@ export const useAutoResize = ({ canvas, container }: UserAutoResizeProps) => {
 
     if (canvas && container) {
       resizeObserver = new ResizeObserver(() => {
-        console.log('first');
         autoZoom();
       });
 
@@ -79,4 +78,6 @@ export const useAutoResize = ({ canvas, container }: UserAutoResizeProps) => {
       }
     };
   }, [canvas, container, autoZoom]);
+
+  return { autoZoom };
 };
