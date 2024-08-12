@@ -10,6 +10,8 @@ export const Logo = () => {
           fill
           alt='Image AI'
           className='shrink-0 hover:opacity-75 transition'
+          priority
+          quality={75}
         />
       </div>
     </Link>
