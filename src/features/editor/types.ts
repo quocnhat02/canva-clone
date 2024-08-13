@@ -39,6 +39,17 @@ export const RECTANGLE_OPTIONS = {
   angle: 0,
 };
 
+export const TRIANGLE_OPTIONS = {
+  left: 100,
+  top: 100,
+  fill: FILL_COLOR,
+  stroke: STROKE_COLOR,
+  strokeWidth: STROKE_WIDTH,
+  width: 400,
+  height: 400,
+  angle: 0,
+};
+
 export type BuildEditorProps = {
   canvas: fabric.Canvas;
 };
@@ -46,4 +57,7 @@ export type BuildEditorProps = {
 export interface Editor {
   addCircle: () => void;
   addSoftRectangle: () => void;
+  addRectangle: () => void;
+  addTriangle: () => void;
+  addInverseTriangle: () => void;
 }

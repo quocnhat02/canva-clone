@@ -6,6 +6,7 @@ import {
   CIRCLE_OPTIONS,
   Editor,
   RECTANGLE_OPTIONS,
+  TRIANGLE_OPTIONS,
 } from '@/features/editor/types';
 
 const buildEditor = ({ canvas }: BuildEditorProps): Editor => {
@@ -43,6 +44,28 @@ const buildEditor = ({ canvas }: BuildEditorProps): Editor => {
         ...RECTANGLE_OPTIONS,
         rx: 50,
         ry: 50,
+      });
+
+      addToCanvas(object);
+    },
+    addRectangle: () => {
+      const object = new fabric.Rect({
+        ...RECTANGLE_OPTIONS,
+      });
+
+      addToCanvas(object);
+    },
+    addTriangle: () => {
+      const object = new fabric.Triangle({
+        ...TRIANGLE_OPTIONS,
+      });
+
+      addToCanvas(object);
+    },
+    addInverseTriangle: () => {
+      const object = new fabric.Triangle({
+        ...TRIANGLE_OPTIONS,
+        angle: 180,
       });
 
       addToCanvas(object);
