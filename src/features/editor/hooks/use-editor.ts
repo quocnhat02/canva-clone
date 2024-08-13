@@ -4,6 +4,7 @@ import { useAutoResize } from './use-auto-resize';
 import {
   BuildEditorProps,
   CIRCLE_OPTIONS,
+  DIAMOND_OPTIONS,
   Editor,
   RECTANGLE_OPTIONS,
   TRIANGLE_OPTIONS,
@@ -63,10 +64,33 @@ const buildEditor = ({ canvas }: BuildEditorProps): Editor => {
       addToCanvas(object);
     },
     addInverseTriangle: () => {
-      const object = new fabric.Triangle({
-        ...TRIANGLE_OPTIONS,
-        angle: 180,
-      });
+      const HEIGHT = TRIANGLE_OPTIONS.width;
+      const WIDTH = TRIANGLE_OPTIONS.height;
+
+      const object = new fabric.Polygon(
+        [
+          { x: 0, y: 0 },
+          { x: WIDTH, y: 0 },
+          { x: WIDTH / 2, y: HEIGHT },
+        ],
+        { ...TRIANGLE_OPTIONS }
+      );
+
+      addToCanvas(object);
+    },
+    addDiamond: () => {
+      const HEIGHT = DIAMOND_OPTIONS.height;
+      const WIDTH = DIAMOND_OPTIONS.width;
+
+      const object = new fabric.Polygon(
+        [
+          { x: WIDTH / 2, y: 0 },
+          { x: WIDTH, y: HEIGHT / 2 },
+          { x: WIDTH / 2, y: HEIGHT },
+          { x: 0, y: HEIGHT / 2 },
+        ],
+        { ...DIAMOND_OPTIONS }
+      );
 
       addToCanvas(object);
     },
