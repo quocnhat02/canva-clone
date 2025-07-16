@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Canva Clone
 
-## Getting Started
+Canva Clone là một ứng dụng web cho phép người dùng thiết kế, chỉnh sửa hình ảnh trực tuyến với các tính năng mạnh mẽ như AI tạo ảnh, quản lý dự án, xác thực người dùng và thanh toán. Dự án được xây dựng với Next.js, Drizzle ORM, Stripe, TailwindCSS và nhiều công nghệ hiện đại khác.
 
-First, run the development server:
+## 🚀 Tính năng nổi bật
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Chỉnh sửa ảnh trực quan:** Kéo thả, thêm văn bản, hình khối, màu sắc, bộ lọc, v.v.
+- **AI tạo ảnh:** Tích hợp AI để tạo, chỉnh sửa hoặc xóa nền ảnh tự động.
+- **Quản lý dự án:** Lưu, mở, chỉnh sửa nhiều dự án thiết kế.
+- **Xác thực & phân quyền:** Đăng ký, đăng nhập, bảo vệ tài khoản.
+- **Thanh toán & nâng cấp:** Tích hợp Stripe cho các gói dịch vụ cao cấp.
+- **Tải lên & quản lý ảnh:** Hỗ trợ upload, quản lý thư viện ảnh cá nhân.
+
+## 🛠️ Công nghệ sử dụng
+
+- **Next.js** (React, SSR, API routes)
+- **Drizzle ORM** (quản lý database, migration)
+- **Stripe** (thanh toán)
+- **TailwindCSS** (giao diện)
+- **Bun, npm, pnpm, yarn** (chạy dự án)
+- **AI/ML** (tạo và xử lý ảnh)
+- **Zustand, React Query** (quản lý trạng thái)
+- **Radix UI, Lucide, React Icons** (UI components)
+
+## 📂 Cấu trúc thư mục chính
+
+- `src/features/editor/`: Tính năng chỉnh sửa ảnh, toolbar, sidebar, AI, template...
+- `src/features/ai/`: Tích hợp AI tạo ảnh, xóa nền, filter...
+- `src/features/projects/`: Quản lý dự án thiết kế.
+- `src/features/images/`: Quản lý, upload ảnh.
+- `src/features/auth/`: Xác thực, phân quyền.
+- `src/features/subscriptions/`: Quản lý gói dịch vụ, thanh toán.
+- `src/components/ui/`: Các thành phần UI tái sử dụng.
+- `src/db/`: Cấu hình Drizzle ORM, schema database.
+- `public/`: Ảnh, icon, tài nguyên tĩnh.
+
+## ⚡️ Hướng dẫn cài đặt & chạy
+
+1. **Clone dự án:**
+   ```bash
+   git clone <repo-url>
+   cd canva-clone
+   ```
+
+````
+2. **Cài đặt dependencies:**
+   ```bash
+bun install # hoặc npm install, yarn, pnpm
+````
+
+3. **Cấu hình môi trường:**
+   - Tạo file `.env` theo mẫu `.env.example` (nếu có).
+   - Thiết lập các biến môi trường cho database, Stripe, v.v.
+4. **Chạy dự án:**
+   ```bash
+   bun dev # hoặc npm run dev, yarn dev, pnpm dev
+   ```
+
 ```
+5. **Truy cập:**
+   Mở [http://localhost:3000](http://localhost:3000) trên trình duyệt.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧑‍💻 Đóng góp
+- Fork, tạo branch mới, commit và gửi pull request.
+- Mọi ý kiến đóng góp, báo lỗi hoặc tính năng mới đều được hoan nghênh!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Triển khai
+- Có thể triển khai dễ dàng trên Vercel, Netlify hoặc server riêng.
+- Tham khảo tài liệu Next.js để biết thêm chi tiết.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 📞 Liên hệ
+- Nếu có thắc mắc hoặc cần hỗ trợ, vui lòng tạo issue hoặc liên hệ qua email của tác giả.
+```
